@@ -7,6 +7,6 @@ test:
     - npm install -g bower gulp
     - bower install
   override:
-    - case $CIRCLE_NODE_INDEX in 0) gulp setup --build-id="secxbrl-$CIRCLE_SHA1" --config=secxbrl ;; 1) gulp setup --build-id="edinet-$CIRCLE_SHA1" --config=edinet ;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) gulp setup --build-id="secxbrl-$CIRCLE_SHA1" --config=secxbrl ;; 1) gulp setup --build-id="edinet-$CIRCLE_SHA1" --config=edinet ;; esac
   post:
-    - case $CIRCLE_NODE_INDEX in 0) gulp teardown --build-id="secxbrl-$CIRCLE_SHA1" --config=secxbrl ;; 1) gulp teardown --build-id="edinet-$CIRCLE_SHA1" --config=edinet ;; esac:
+    - case $CIRCLE_NODE_INDEX in 0) gulp teardown --build-id="secxbrl-$CIRCLE_SHA1" --config=secxbrl ;; 1) gulp teardown --build-id="edinet-$CIRCLE_SHA1" --config=edinet ;; esac
