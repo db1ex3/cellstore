@@ -1,0 +1,12 @@
+machine:
+  node:
+    version: 0.10.33
+test:
+  pre:
+    - gem install sass
+    - npm install -g bower gulp
+    - bower install
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+  post:
+    - gulp teardown
