@@ -7,6 +7,7 @@ test:
     - npm install -g bower gulp
     - bower install
   override:
-    - gulp setup
+    - case $CIRCLE_NODE_INDEX in 0) gulp setup --build-id="secxbrl-$RANDOM" --config=secxbrl ;; 1) gulp setup --build-id="edinet-$RANDOM" --config=edinet ;; esac:
+          parallel: true
   post:
     - gulp teardown
